@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
 
     });
 
-    res.status(201).json(author);
+    res.status(201).json({Message:"Athor created Successfully",author});
   } catch (err) {
     res.status(500).json({ message: "Failed to add author" });
   }

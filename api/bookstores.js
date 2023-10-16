@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
      
     });
 
-    res.status(201).json(newBookStore);
+    res.status(201).json({message:"BookStore created succesfully", newBookStore});
   } catch (err) {
     res.status(500).json({ message: "Failed to add bookStore" });
   }
@@ -72,7 +72,7 @@ router.put("/:id", async (req, res) => {
     });
 
     if (bookStore) {
-      res.status(200).json(author);
+      res.status(200).json({message:"BookStore updated succesfully",bookStore});
     } else {
       res.status(404).json({ message: "BookStore not found" });
     }

@@ -44,7 +44,7 @@ router.get("/:id", async (req, res) => {
     res.status(500).json({ message: "failed to get book" });
   }
 });
-// Get Book by Author id
+// Get Book by Book id
 router.get('/author/:id', async (req, res) => {
   try {
       const book = await prisma.book.findMany({
@@ -93,7 +93,7 @@ router.put("/:id", authenticate, async (req, res) => {
     });
 
     if (book) {
-      res.status(200).json(book);
+      res.status(200).json({message: "Book updated succesfully",book});
     } else {
       res.status(404).json({ message: "book not found" });
     }
